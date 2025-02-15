@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sevgililer Günü Özel</title>
+  <style>
+    body {
+      text-align: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: 'Arial', sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    nav {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;
+    }
+    .password-container {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 30vh;
+    }
+    input {
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ff3366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #ff1a4d;
+    }
+    .music-container {
+      margin-top: 20px;
+    }
+    .play-button {
+      background-color: #ff3366;
+      font-size: 20px;
+      padding: 15px 30px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .play-button:hover {
+      background-color: #ff1a4d;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="file:///C:/Users/msi/Desktop/%3B3/homepage.html">Ana Sayfa</a>
+    <a href="file:///C:/Users/msi/Desktop/%3B3/gallery.html" onclick="askPassword(event); return false;">Galeri</a>
+  </nav>
+  
+  <div class="container">
+    <h1>Sevgilim, Seni Çok Seviyorum! ❤️</h1>
+  </div>
+  
+  <div class="music-container">
+    <h3>Şarkımız 🎶</h3>
+    <button class="play-button" onclick="playMusic()">Şarkıyı Dinle</button>
+  </div>
+  
+  <div class="password-container" id="passwordContainer">
+    <h2>Galeriyi Görmek İçin Şifre Girin</h2>
+    <input type="password" id="passwordInput" placeholder="Şifre">
+    <button onclick="checkPassword()">Giriş</button>
+  </div>
+  
+  <script>
+    function askPassword(e) {
+      e.preventDefault(); // Linkin varsayılan yönlendirmesini engeller
+      document.querySelector('.container').style.display = 'none';
+      document.getElementById('passwordContainer').style.display = 'flex';
+    }
+    
+    function checkPassword() {
+      const password = document.getElementById('passwordInput').value;
+      if (password === "031224") {
+        window.location.href = "gallery.html"; // Şifre doğruysa yönlendir
+      } else {
+        alert("Yanlış şifre! Tekrar deneyin.");
+      }
+    }
+    
+    function playMusic() {
+      window.open("https://www.youtube.com/watch?v=veMliSBk9sk&t=60s", "_blank");
+    }
+  </script>
+</body>
+</html>
